@@ -21,7 +21,7 @@ repository               : "Dominic-Behrens/Dominic-Behrens.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "images/dobehrens_small.png"
+  avatar           : "images/dobehrens_small.jpg"
   name             : "Dominic Behrens"
   pronouns         : # example: "he/him"  
   bio              : "I'm an economist based in Sydney. My main interests are housing, transport and urban economics."
