@@ -35,12 +35,14 @@ Skills
   * Persuasive writing, including for submissions, thought leadership and op-ed articles
   * Public speaking and presentation of economic analysis 
 * Data Analysis in R
-  * Spatial and GIS analysis with {sf}
-  * Complex analysis and large model development using {targets}
-  * 
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+  * Spatial and GIS analysis with {sf} 
+  * Pipeline development using {targets}
+  * Econometric modelling and causal inference, particularly time series econometrics
+  * Data visualisation with {ggplot2} and {tmap}
+  * Version control with Git
+  
+
+
 
 Publications
 ======
@@ -48,18 +50,7 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
+
 Service and leadership
 ======
 * Founding Committee Member, Sydney YIMBY, 2023-Present
