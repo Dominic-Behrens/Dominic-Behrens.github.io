@@ -11,7 +11,7 @@ locale                   : "en-AU"
 title                    : "Dominic Behrens"
 title_separator          : "-"
 name                     : &name "Dominic Behrens"
-description              : &description "personal description"
+description              : &description "Economist specialising in housing, land-use, transport and urban economics"
 url                      : https://Dominic-Behrens.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Dominic-Behrens/Dominic-Behrens.github.io"
@@ -24,9 +24,9 @@ author:
   avatar           : "dobehrens_small.jpg"
   name             : "Dominic Behrens"
   pronouns         : "he/him"  
-  bio              : "I'm an economist based in Sydney. My main interests are housing, transport and urban economics."
+  bio              : "I'm an economist based in Sydney. My main interests are housing, land-use, transport and urban economics."
   location         : "Sydney"
-  employer         : "Deloitte Access Economics"
+  employer         : "The Centre for International Economics"
   uri              : # URL
   email            : "dbehrens508@gmail.com" 
 
@@ -57,7 +57,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "dominic-b-693555124"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -170,6 +170,7 @@ exclude:
   - node_modules
   - package.json
   - tmp
+  - The Loop.md
   - vendor
 keep_files:
   - .git
