@@ -1,16 +1,55 @@
 ---
 layout: home-hero
+body_class: prototype-home
 permalink: /
 title: "Dominic Behrens"
-tagline: "Economist — Sydney"
+tagline: "Housing and urban economist"
 pitch: "Housing and urban economist. Doing absolutely everything I can to fix the housing crisis."
-intro: "I'm an economist at The Centre for International Economics. My work is housing, land-use, transport and urban economics — combining quantitative analysis with policy communication for non-technical audiences. I also co-founded Sydney YIMBY."
-now:
-  - "Senior Economist at The Centre for International Economics"
-  - "Co-author of Grattan Institute's *Wasted Space* — parking reform and the housing crisis"
-  - "Secretary & co-founder of Sydney YIMBY"
-  - "Lead organiser, Sydney Urban Economics Reading Group"
-selected_work_limit: 4
+intro: "I work on the rules, infrastructure and economics that shape where people live. My work spans housing, land use and transport, from detailed modelling to public argument."
+portrait: "https://github.com/Dominic-Behrens.png?size=800"
+featured_work:
+  - title: "Wasted Space: Axe Car-Parking Rules to Ease the Housing Crisis"
+    venue: "Grattan Institute"
+    year: "2026"
+    type: "Report"
+    deck: "Australian-first evidence on on-street parking supply and use, and the case for scrapping costly parking mandates."
+    url: "https://grattan.edu.au/report/wasted-space-axe-car-parking-rules-to-ease-the-housing-crisis"
+    art: "parking"
+    art_label: "NO MINIMUMS"
+  - title: "Against 'Affordable' Housing"
+    venue: "Inflection Points"
+    year: "2026"
+    type: "Essay"
+    deck: "Why affordable housing policy should focus less on labels and more on building enough homes."
+    url: "https://inflectionpoints.work/articles/against-affordable-housing"
+    art: "supply"
+    art_label: "BUILD MORE"
+  - title: "Inflection Points Podcast"
+    venue: "Inflection Points"
+    year: "2026"
+    type: "Podcast"
+    deck: "Conversations about housing, cities and the policy choices that shape them."
+    url: "https://inflectionpoints.work/podcast"
+    art: "audio"
+    art_label: "ON AIR"
+  - title: "What Local Land Use Reform Does, and Doesn't, Do"
+    venue: "Working paper"
+    year: "2026"
+    type: "Research"
+    deck: "Forthcoming work with Matthew Maltman and Theo Gibbons on what local planning reform can achieve."
+    url: "/publications/2026-01-01-local-land-use-reform/"
+    art: "zoning"
+    art_label: "UPZONE"
+desk:
+  - label: "Work"
+    value: "Senior Economist"
+    detail: "The Centre for International Economics"
+  - label: "Advocacy"
+    value: "Co-founder & Secretary"
+    detail: "Sydney YIMBY"
+  - label: "Community"
+    value: "Lead organiser"
+    detail: "Sydney Urban Economics Reading Group"
 redirect_from: 
   - /about/
   - /about.html
