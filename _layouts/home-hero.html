@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<div id="main" role="main">
+  <article class="home-hero">
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero__inner">
+        {% if page.tagline %}<p class="hero__tagline">{{ page.tagline }}</p>{% endif %}
+        <h1 class="hero__name">{{ page.title | default: site.name }}</h1>
+        {% if page.pitch %}<p class="hero__pitch">{{ page.pitch }}</p>{% endif %}
+        <div class="hero__cta">
+          <a class="btn--hero" href="{{ base_path }}/cv/">View CV</a>
+          <a class="btn--hero btn--hero--ghost" href="{{ base_path }}/publications/">Publications</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Intro -->
+    {% if page.intro %}
+    <section class="home-section home-section--intro">
+      <div class="home-section__inner">
+        <p class="intro-lede">{{ page.intro }}</p>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Selected work -->
+    <section class="home-section home-section--work">
+      <div class="home-section__inner">
+        <h2 class="home-section__title">Selected work</h2>
+        <div class="work-grid">
+          {% assign work = site.publications | reverse %}
+          {% for post in work limit: page.selected_work_limit %}
+            {% assign card_url = post.link | default: post.url %}
+            {% unless card_url contains '://' %}{% assign card_url = base_path | append: card_url %}{% endunless %}
+            <a class="work-card" href="{{ card_url }}">
+              <span class="work-card__venue">{{ post.venue }}</span>
+              <span class="work-card__title">{{ post.title }}</span>
+              <span class="work-card__date">{{ post.date | date: "%Y" }}</span>
+            </a>
+          {% endfor %}
+        </div>
+        <p class="work-more"><a href="{{ base_path }}/publications/">All publications &rarr;</a></p>
+      </div>
+    </section>
+
+    <!-- Now -->
+    {% if page.now %}
+    <section class="home-section home-section--now">
+      <div class="home-section__inner">
+        <h2 class="home-section__title">Now</h2>
+        <ul class="now-list">
+          {% for item in page.now %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    {% endif %}
+
+  </article>
+</div>

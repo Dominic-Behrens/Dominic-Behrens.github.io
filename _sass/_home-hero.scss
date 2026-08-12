@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Home hero — Bold Personal Brand prototype
+   Terracotta on cream. Scoped to .home-hero so other pages are untouched.
+   ========================================================================== */
+
+$terracotta:        #b5533a;
+$terracotta-dark:   #8f3f2c;
+$terracotta-tint:   #c9725a;
+$cream:             #faf6f0;
+$cream-deep:        #f1e9dd;
+$ink:               #2b2522;
+$ink-soft:          #5c524c;
+
+$display-font: "Fraunces", Georgia, "Times New Roman", serif;
+$body-font:   "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+.home-hero {
+  font-family: $body-font;
+  color: $ink;
+  background: $cream;
+}
+
+/* Kill the default sidebar gutter on the homepage only */
+.home-hero { margin-left: 0; max-width: none; }
+
+/* ---- Hero ------------------------------------------------------------- */
+.hero {
+  background: $terracotta;
+  color: #fff;
+  padding: 6rem 1.5rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -8rem;
+  bottom: -10rem;
+  width: 26rem;
+  height: 26rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+}
+.hero__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.hero__tagline {
+  font-family: $display-font;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5rem;
+  opacity: 0.92;
+}
+.hero__name {
+  font-family: $display-font;
+  font-weight: 600;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+.hero__pitch {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 42rem;
+  margin: 0 0 2rem;
+  opacity: 0.95;
+}
+.hero__cta { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+
+.btn--hero {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  background: #fff;
+  color: $terracotta-dark;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn--hero:hover { background: $cream-deep; }
+.btn--hero--ghost {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  padding: calc(0.7rem - 2px) calc(1.5rem - 2px);
+}
+.btn--hero--ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* ---- Sections --------------------------------------------------------- */
+.home-section { padding: 4rem 1.5rem; }
+.home-section--intro { background: $cream; padding-top: 4.5rem; }
+.home-section--work  { background: #fff; }
+.home-section--now   { background: $cream-deep; }
+
+.home-section__inner { max-width: 980px; margin: 0 auto; }
+
+.home-section__title {
+  font-family: $display-font;
+  font-weight: 600;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.75rem;
+  color: $ink;
+}
+
+.intro-lede {
+  font-family: $display-font;
+  font-size: 1.45rem;
+  line-height: 1.55;
+  font-weight: 400;
+  color: $ink;
+  margin: 0;
+  max-width: 46rem;
+}
+.intro-lede em { color: $terracotta-dark; }
+
+/* ---- Work cards ------------------------------------------------------- */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.work-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.4rem 1.3rem;
+  border: 1px solid #e8ddcf;
+  border-radius: 4px;
+  background: $cream;
+  text-decoration: none;
+  color: $ink;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.work-card:hover {
+  border-color: $terracotta;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(181, 83, 58, 0.12);
+}
+.work-card__venue {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $terracotta-dark;
+}
+.work-card__title {
+  font-family: $display-font;
+  font-size: 1.12rem;
+  line-height: 1.3;
+  font-weight: 500;
+}
+.work-card__date {
+  font-size: 0.85rem;
+  color: $ink-soft;
+  margin-top: auto;
+}
+.work-more {
+  margin: 1.5rem 0 0;
+  font-size: 0.95rem;
+}
+.work-more a { color: $terracotta-dark; font-weight: 600; text-decoration: none; }
+.work-more a:hover { text-decoration: underline; }
+
+/* ---- Now -------------------------------------------------------------- */
+.now-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 46rem;
+}
+.now-list li {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  font-size: 1.08rem;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(43, 37, 34, 0.1);
+}
+.now-list li:last-child { border-bottom: none; }
+.now-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.95rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $terracotta;
+}
+.now-list em { color: $terracotta-dark; }
+
+/* ---- Responsive ------------------------------------------------------- */
+@media (max-width: 600px) {
+  .hero { padding: 4rem 1.25rem 3.5rem; }
+  .home-section { padding: 3rem 1.25rem; }
+  .intro-lede { font-size: 1.25rem; }
+}
+
+/* ---- Footer contact (global) ----------------------------------------- */
+.footer-contact { margin-bottom: 0.75rem; }
+.footer-contact__name { font-family: $display-font; font-weight: 500; margin: 0 0 0.15rem; }
+.footer-contact a { color: $terracotta-dark; text-decoration: none; }
+.footer-contact a:hover { text-decoration: underline; }
