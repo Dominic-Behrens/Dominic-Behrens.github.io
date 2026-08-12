@@ -3,8 +3,8 @@ layout: home-hero
 permalink: /
 title: "Dominic Behrens"
 tagline: "Economist — Sydney"
-pitch: "Housing. Transport. Cities. I turn data and modelling into evidence that moves policy."
-intro: "I'm an economist at The Centre for International Economics, working on housing, land-use, transport and urban economics. I combine quantitative analysis with policy communication for non-technical audiences — and I co-founded Sydney YIMBY to push for more affordable, liveable cities."
+pitch: "REPLACE ME — your pitch line goes here"
+intro: "I'm an economist at The Centre for International Economics. My work is housing, land-use, transport and urban economics — combining quantitative analysis with policy communication for non-technical audiences. I also co-founded Sydney YIMBY."
 now:
   - "Senior Economist at The Centre for International Economics"
   - "Co-author of Grattan Institute's *Wasted Space* — parking reform and the housing crisis"
