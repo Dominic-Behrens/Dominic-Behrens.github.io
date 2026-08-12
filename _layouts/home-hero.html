@@ -4,279 +4,69 @@ layout: default
 
 {% include base_path %}
 
-<!--
-  PROTOTYPE: three homepage directions on the existing route.
-  Switch with ?variant=a, ?variant=b, or ?variant=c.
-  Delete the losing variants and switcher once a direction is selected.
--->
-<main class="home-prototype" role="main">
+<main class="simple-home" role="main">
+  <h1>{{ page.title }}</h1>
 
-  <!-- A: Civic Editorial -->
-  <article class="home-variant civic is-active" data-home-variant="a">
-    <header class="civic-hero">
-      <div class="prototype-wrap civic-hero__grid">
-        <div class="civic-hero__copy">
-          <p class="prototype-kicker">Sydney / Economics / Public policy</p>
-          <h1>{{ page.title }}</h1>
-          <p class="civic-hero__pitch">{{ page.pitch }}</p>
-          <nav class="prototype-actions" aria-label="Profile links">
-            <a href="{{ base_path }}/publications/">Explore the work <span aria-hidden="true">&rarr;</span></a>
-            <a href="{{ base_path }}/cv/">Read the CV</a>
-          </nav>
-        </div>
-        <figure class="civic-portrait">
-          <img src="{{ page.portrait }}" alt="{{ site.name }}">
-          <figcaption>
-            <span>Housing</span><span>Land use</span><span>Transport</span>
-          </figcaption>
-        </figure>
-      </div>
+  <div class="simple-home__grid">
+    <header class="simple-home__profile">
+      <img src="{{ page.portrait }}" alt="{{ site.name }}">
+      <p class="simple-home__pitch">{{ page.pitch }}</p>
+      <p>{{ page.intro }}</p>
+      <ul class="simple-home__links">
+        <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+        <li><a href="https://github.com/{{ site.author.github }}">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a></li>
+        <li><a href="{{ base_path }}/cv/">CV</a></li>
+      </ul>
     </header>
 
-    <section class="civic-intro">
-      <div class="prototype-wrap civic-intro__grid">
-        <p class="prototype-kicker">What I do</p>
-        <p>{{ page.intro }}</p>
-      </div>
-    </section>
-
-    <section class="civic-work">
-      <div class="prototype-wrap">
-        <header class="civic-section-head">
-          <p class="prototype-kicker">Selected work / 2026</p>
-          <h2>Research, writing<br>and public argument.</h2>
-        </header>
-        <div class="civic-stories">
+    <div class="simple-home__content">
+      <section>
+        <h2>Selected work</h2>
+        <ol class="simple-entries">
           {% for item in page.featured_work %}
             {% assign item_url = item.url %}
             {% unless item_url contains '://' %}{% assign item_url = base_path | append: item_url %}{% endunless %}
-            <article class="civic-story civic-story--{{ item.art }}">
-              <a class="prototype-art prototype-art--{{ item.art }}" href="{{ item_url }}" aria-label="Read {{ item.title }}">
-                <span class="prototype-art__number">0{{ forloop.index }}</span>
-                <span class="prototype-art__label">{{ item.art_label }}</span>
-                <span class="prototype-art__motif" aria-hidden="true"></span>
-              </a>
-              <div class="civic-story__copy">
-                <p class="prototype-meta">{{ item.type }} / {{ item.venue }} / {{ item.year }}</p>
+            <li>
+              <div class="simple-entry__head">
                 <h3><a href="{{ item_url }}">{{ item.title }}</a></h3>
-                <p>{{ item.deck }}</p>
-                <a class="prototype-text-link" href="{{ item_url }}">Open project <span aria-hidden="true">&nearr;</span></a>
+                <span>{{ item.year }}</span>
               </div>
-            </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <section class="civic-desk">
-      <div class="prototype-wrap">
-        <p class="prototype-kicker">Current desk</p>
-        <div class="civic-desk__grid">
-          {% for item in page.desk %}
-            <article>
-              <span>{{ item.label }}</span>
-              <strong>{{ item.value }}</strong>
-              <p>{{ item.detail }}</p>
-            </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-  </article>
-
-  <!-- B: Campaign Broadsheet -->
-  <article class="home-variant broadsheet" data-home-variant="b" hidden>
-    <header class="broadsheet-hero">
-      <div class="prototype-wrap">
-        <div class="broadsheet-mastline">
-          <span>Dominic Behrens</span>
-          <span>Sydney, Australia</span>
-          <span>Housing / Cities / Economics</span>
-        </div>
-        <div class="broadsheet-hero__grid">
-          <div class="broadsheet-hero__copy">
-            <p class="prototype-kicker">Housing and urban economist</p>
-            <h1>Fix the<br>housing<br>crisis.</h1>
-            <p>{{ page.pitch }}</p>
-          </div>
-          <figure class="broadsheet-portrait">
-            <img src="{{ page.portrait }}" alt="{{ site.name }}">
-            <figcaption>{{ page.title }}</figcaption>
-          </figure>
-          <div class="broadsheet-manifesto">
-            <p>{{ page.intro }}</p>
-            <a href="{{ base_path }}/cv/">Curriculum vitae &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section class="broadsheet-work">
-      <div class="prototype-wrap">
-        <header class="broadsheet-section-head">
-          <p>Selected work</p>
-          <p>Reports / Essays / Audio / Research</p>
-        </header>
-        {% for item in page.featured_work %}
-          {% assign item_url = item.url %}
-          {% unless item_url contains '://' %}{% assign item_url = base_path | append: item_url %}{% endunless %}
-          <article class="broadsheet-story broadsheet-story--{{ item.art }}">
-            <div class="broadsheet-story__number">0{{ forloop.index }}</div>
-            <div class="broadsheet-story__body">
-              <p class="prototype-meta">{{ item.type }} / {{ item.venue }} / {{ item.year }}</p>
-              <h2><a href="{{ item_url }}">{{ item.title }}</a></h2>
               <p>{{ item.deck }}</p>
-            </div>
-            <a class="prototype-art prototype-art--{{ item.art }}" href="{{ item_url }}" aria-label="Read {{ item.title }}">
-              <span class="prototype-art__label">{{ item.art_label }}</span>
-              <span class="prototype-art__motif" aria-hidden="true"></span>
-            </a>
-          </article>
-        {% endfor %}
-      </div>
-    </section>
+              <small>{{ item.type }} / {{ item.venue }}</small>
+            </li>
+          {% endfor %}
+        </ol>
+        <a class="simple-home__more" href="{{ base_path }}/publications/">All publications &rarr;</a>
+      </section>
 
-    <section class="broadsheet-desk">
-      <div class="prototype-wrap">
-        <h2>On the desk</h2>
-        <div class="broadsheet-desk__grid">
+      <section>
+        <h2>Work and community</h2>
+        <ol class="simple-entries">
           {% for item in page.desk %}
-            <article>
-              <p class="prototype-meta">{{ item.label }}</p>
-              <strong>{{ item.value }}</strong>
-              <span>{{ item.detail }}</span>
-            </article>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-  </article>
-
-  <!-- C: Urban Atlas -->
-  <article class="home-variant atlas" data-home-variant="c" hidden>
-    <header class="atlas-hero">
-      <div class="atlas-gridlines" aria-hidden="true"></div>
-      <div class="prototype-wrap atlas-hero__grid">
-        <div class="atlas-hero__copy">
-          <p class="prototype-kicker">33.8688 S / 151.2093 E</p>
-          <h1>Dominic<br>Behrens</h1>
-          <p>{{ page.pitch }}</p>
-          <nav class="prototype-actions" aria-label="Profile links">
-            <a href="{{ base_path }}/publications/">Work index <span aria-hidden="true">&rarr;</span></a>
-            <a href="{{ base_path }}/cv/">CV</a>
-          </nav>
-        </div>
-        <figure class="atlas-portrait">
-          <span class="atlas-portrait__coordinates">SYD / 2026</span>
-          <img src="{{ page.portrait }}" alt="{{ site.name }}">
-        </figure>
-      </div>
-      <div class="prototype-wrap atlas-hero__foot">
-        <span>Housing</span><span>Land use</span><span>Transport</span><span>Urban economics</span>
-      </div>
-    </header>
-
-    <section class="atlas-intro">
-      <div class="prototype-wrap">
-        <p>{{ page.intro }}</p>
-      </div>
-    </section>
-
-    <section class="atlas-work">
-      <div class="prototype-wrap">
-        <header class="atlas-section-head">
-          <p class="prototype-kicker">Selected coordinates</p>
-          <h2>Work on cities,<br>rules and homes.</h2>
-        </header>
-        <div class="atlas-tiles">
-          {% for item in page.featured_work %}
-            {% assign item_url = item.url %}
-            {% unless item_url contains '://' %}{% assign item_url = base_path | append: item_url %}{% endunless %}
-            <article class="atlas-tile atlas-tile--{{ item.art }}">
-              <a class="prototype-art prototype-art--{{ item.art }}" href="{{ item_url }}" aria-label="Read {{ item.title }}">
-                <span class="prototype-art__number">DB / 0{{ forloop.index }}</span>
-                <span class="prototype-art__label">{{ item.art_label }}</span>
-                <span class="prototype-art__motif" aria-hidden="true"></span>
-              </a>
-              <div class="atlas-tile__copy">
-                <p class="prototype-meta">{{ item.type }} / {{ item.year }}</p>
-                <h3><a href="{{ item_url }}">{{ item.title }}</a></h3>
-                <p>{{ item.deck }}</p>
+            <li>
+              <div class="simple-entry__head">
+                <h3>{{ item.value }}</h3>
+                <span>{{ item.label }}</span>
               </div>
-            </article>
+              <p>{{ item.detail }}</p>
+            </li>
           {% endfor %}
-        </div>
-      </div>
-    </section>
+        </ol>
+      </section>
 
-    <section class="atlas-desk">
-      <div class="prototype-wrap atlas-desk__grid">
-        <h2>Currently<br>in motion.</h2>
-        {% for item in page.desk %}
-          <article>
-            <span>{{ item.label }}</span>
-            <strong>{{ item.value }}</strong>
-            <p>{{ item.detail }}</p>
-          </article>
-        {% endfor %}
-      </div>
-    </section>
-  </article>
-
-  <nav class="prototype-switcher" aria-label="Homepage prototype variants">
-    <button type="button" data-switch-direction="-1" aria-label="Previous design">&larr;</button>
-    <div>
-      <span>Homepage prototype</span>
-      <strong data-variant-label>A / Civic editorial</strong>
+      <section>
+        <h2>Education</h2>
+        <ol class="simple-entries">
+          <li>
+            <div class="simple-entry__head">
+              <h3>Bachelor of Economics (Honours)</h3>
+              <span>2021</span>
+            </div>
+            <p>University of New South Wales. First Class Honours in Econometrics.</p>
+          </li>
+        </ol>
+      </section>
     </div>
-    <button type="button" data-switch-direction="1" aria-label="Next design">&rarr;</button>
-  </nav>
+  </div>
 </main>
-
-<script>
-(function () {
-  var keys = ['a', 'b', 'c'];
-  var labels = {
-    a: 'A / Civic editorial',
-    b: 'B / Campaign broadsheet',
-    c: 'C / Urban atlas'
-  };
-  var panels = document.querySelectorAll('[data-home-variant]');
-  var label = document.querySelector('[data-variant-label]');
-  var requested = new URLSearchParams(window.location.search).get('variant');
-  var current = keys.indexOf(requested) > -1 ? requested : 'a';
-
-  function showVariant(key, updateUrl) {
-    current = key;
-    for (var i = 0; i < panels.length; i += 1) {
-      var active = panels[i].getAttribute('data-home-variant') === key;
-      panels[i].hidden = !active;
-      panels[i].classList.toggle('is-active', active);
-    }
-    document.body.setAttribute('data-prototype-variant', key);
-    label.textContent = labels[key];
-
-    if (updateUrl) {
-      var url = new URL(window.location.href);
-      url.searchParams.set('variant', key);
-      window.history.replaceState({}, '', url);
-    }
-  }
-
-  function cycle(direction) {
-    var index = keys.indexOf(current);
-    showVariant(keys[(index + direction + keys.length) % keys.length], true);
-  }
-
-  document.querySelector('[data-switch-direction="-1"]').addEventListener('click', function () { cycle(-1); });
-  document.querySelector('[data-switch-direction="1"]').addEventListener('click', function () { cycle(1); });
-  document.addEventListener('keydown', function (event) {
-    var tag = document.activeElement && document.activeElement.tagName;
-    if (tag === 'INPUT' || tag === 'TEXTAREA' || document.activeElement.isContentEditable) return;
-    if (event.key === 'ArrowLeft') cycle(-1);
-    if (event.key === 'ArrowRight') cycle(1);
-  });
-
-  showVariant(current, false);
-}());
-</script>
