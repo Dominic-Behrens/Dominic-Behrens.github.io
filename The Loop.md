@@ -7,5 +7,6 @@
 - Edit the full publication list in `publications/index.html`.
 - Edit the web CV in `cv/index.html`.
 - Shared colours and layout are in `styles.css`.
-- Dark green remains the default palette. The cream, green-text, `#3F6F8A` highlight palette is an optional browser-saved preview, shared across site pages. `theme.js` controls the toggle.
+- The chosen site palette is cream background, green text and `#3F6F8A` highlights. There is no theme toggle or preference script.
+- Page links use `/styles.css?v=3` to avoid cached earlier palettes after deployment. Change the version when CSS changes require a fresh download.
 - The downloadable CV is `files/Dominic_Behrens_Resume (1).pdf`.

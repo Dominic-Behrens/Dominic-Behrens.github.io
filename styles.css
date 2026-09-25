@@ -1,15 +1,4 @@
 :root {
-  color-scheme: dark;
-  --bg: #073f39;
-  --text: #f3ead7;
-  --muted: #b9c9c1;
-  --accent: #ff8a65;
-  --rule: rgba(243, 234, 215, 0.18);
-  --sans: "Space Grotesk", Arial, sans-serif;
-  --mono: "IBM Plex Mono", Consolas, monospace;
-}
-
-:root[data-theme="light"] {
   color-scheme: light;
   --bg: #f3ead7;
   --text: #073f39;
@@ -17,6 +6,8 @@
   --accent: #3f6f8a;
   --rule: rgba(7, 63, 57, 0.2);
   --underline: rgba(63, 111, 138, 0.7);
+  --sans: "Space Grotesk", Arial, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
 }
 * { box-sizing: border-box; }
 html { background: var(--bg); }
@@ -40,7 +31,7 @@ section > h2::before { content: "// "; color: var(--accent); }
 .entries li { margin: 0; padding: 0 0 1.75rem; border-bottom: 1px solid var(--rule); }
 .entry-head { display: flex; justify-content: space-between; gap: 1.5rem; align-items: baseline; }
 .entry-head h2, .entry-head h3 { margin: 0; color: var(--text); font-size: 1.2rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; }
-.entry-head h2 a, .entry-head h3 a { color: var(--text); text-decoration: underline; text-decoration-color: var(--underline, rgba(255, 138, 101, 0.7)); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.entry-head h2 a, .entry-head h3 a { color: var(--text); text-decoration: underline; text-decoration-color: var(--underline); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
 .entry-head span, .entries small { flex: 0 0 auto; color: var(--accent); font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; }
 .entries p { margin: 0.55rem 0 0.45rem; color: var(--muted); font-size: 0.93rem; line-height: 1.55; }
 .detail-list { margin: 0.8rem 0 0; padding-left: 1.2rem; color: var(--muted); font-size: 0.93rem; line-height: 1.55; }
@@ -57,9 +48,6 @@ section > h2::before { content: "// "; color: var(--accent); }
 .skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); }
 .skill-grid p { margin: 0; padding: 1.3rem; color: var(--muted); background: var(--bg); line-height: 1.55; }
 .skill-grid strong { color: var(--text); }
-.theme-toggle { position: fixed; z-index: 1; top: 0.65rem; right: 1.25rem; padding: 0.5rem 0.7rem; border: 1px solid var(--rule); border-radius: 0.25rem; color: var(--text); background: var(--bg); font: 500 0.7rem var(--mono); cursor: pointer; }
-.theme-toggle:hover { border-color: var(--accent); }
-.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 @media (max-width: 760px) {
   .home, .page { width: calc(100% - 2.5rem); padding: 3rem 0; }
   .home > h1 { margin-bottom: 2.5rem; }
