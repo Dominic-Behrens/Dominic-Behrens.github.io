@@ -9,7 +9,7 @@ Static personal website for Dominic Behrens.
 - Keep selected work on the homepage in sync with the full publications list.
 - CV: `cv/index.html`
 - Shared design: `styles.css`
-- Palette: cream background, green text and `#3F6F8A` highlights. Edit the shared colours in `styles.css`.
+- Palette: cream background, `#073F39` for non-highlight text, and `#3F6F8A` highlights. Edit the shared colours in `styles.css`.
 - Downloadable CV: `files/Dominic_Behrens_Resume (1).pdf`
 
 There is no build step. Open `index.html` locally or use any static web server. GitHub Pages publishes the files directly.
